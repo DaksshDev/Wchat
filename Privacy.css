@@ -80,10 +80,23 @@ body{
     z-index: -2;
 }
 
+.main{
+    font-size: 70px;
+    filter: drop-shadow(-1px 0px 25px #9100f9);
+    background: linear-gradient(90deg, #2bff00 0%, #0095ff 100%);
+    margin-top: 20px;
+    background-clip: text;
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+}
+
 h1{
     color: #fff;
+    font-size: 45px;
+    filter: drop-shadow(-1px 0px 25px #9100f9);
 }
 
 p{
     color: #fff;
+    font-size: 20px;
 }
