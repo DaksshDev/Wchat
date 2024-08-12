@@ -114,10 +114,12 @@ body{
     width: 100%;
 }
 
-
+.fadetext{
+    color: #ffffff75;
+}
 
 h1{
-    font-size: 70px;
+    font-size: 60px;
     filter: drop-shadow(-1px 0px 25px #50ffc5);
     animation: animationName 15s ease infinite;
     background: linear-gradient(90deg, #ffd900 0%, #00bfff 100%);
