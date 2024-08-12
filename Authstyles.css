@@ -16,6 +16,7 @@ body{
 
 .blob{
 	animation: enterblob 1s ease-in;
+	animation-delay: 1ms;
     margin: 0 auto;
     position:absolute;
     display: block;
