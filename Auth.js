@@ -30,15 +30,16 @@ set(ref(db, 'USERS/'), {
 }
 
 const submit = document.getElementById("submit");
-submit.addEventListener("click", AddData, function (event) {
+submit.addEventListener("click", function (event) {
   event.preventDefault();
- 
   //inputs
   const email = document.getElementById("emailid").value;
   const password = document.getElementById("password").value;
 
   //create user
-  createUserWithEmailAndPassword(auth, email, password)
+   createUserWithEmailAndPassword(auth, email, password)
+     AddData()
+
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user; 
