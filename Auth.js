@@ -23,7 +23,7 @@ const user = document.getElementById("user");
 set(ref(db, 'USERS/'), {
   username: user.value
 }).then(() => {
-  alert("Data added successfully");
+  alert("Account And User Created successfully");
 }).catch((error) => {
   alert(errorMessage);
 });
