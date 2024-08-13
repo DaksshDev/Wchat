@@ -14,8 +14,13 @@ body{
     100%{background-color:#1e00ff;border-radius: 50;}
 }
 
+@keyframes enterblob {
+    0%{background-color: #1e00ff00}
+    100%{background-color: #1e00ff}
+}
+
 .blob{
-    animation: AnimB 10s ease infinite;
+    animation: enterblob 2s ease-in;
     margin: 0 auto;
     position:absolute;
     display: block;
@@ -29,9 +34,10 @@ body{
 	border-radius: 50%;
     filter: blur(200px);
     z-index: -2;
-    
 }
+
 .navbar{  
+    animation: enteru 2s ease-in;
     position: relative;
     text-decoration: none;
     background-color:rgba(0, 0, 0, 0.335);
@@ -48,6 +54,7 @@ body{
 
 
 .btn{
+    animation: enteru 2s ease-in;
     width: 100px;
     height: 40px;
     border-radius: 20px;
@@ -64,6 +71,7 @@ body{
 }
 
 .navlist{
+    animation: enteru 2s ease-in;
     list-style-type: none;
     margin-right: 10px;
     display: flex;
@@ -88,6 +96,7 @@ body{
 }
 
 .btncenter{
+    animation: enteru 2s ease-in;
     display: block;
     margin: 0 auto;
     width: 200px;
@@ -105,9 +114,14 @@ body{
     color: #fff;
     box-shadow: 0px 0px 26px 3px #ff00f2;
     z-index: 1;
+    transition: all .2s ease-in;
+    transform: scale(1.3);
+    transition: all .2s ease-out;
+
 }
 
 .footer{
+    animation: enteru 2s ease-in;
     background-color: #0000000f;
     color: #fff;
     text-align: center;
@@ -118,14 +132,15 @@ body{
 }
 
 .fadetext{
+    animation: enteru 2s ease-in;
     color: #ffffff75;
 }
 
 
 h1{
-    animation: enter 1s ease-in, animationName 15s ease infinite;
-    animation-delay: 1ms;
-    height: 100px;
+    display: block;
+    width: 100%;
+    animation: enter 2s ease-in, animationName 15s ease infinite;
     font-size: 60px;
     filter: drop-shadow(-1px 0px 25px #50ffc5);
     background: linear-gradient(90deg, #ffd900 0%, #00bfff 100%);
@@ -133,9 +148,20 @@ h1{
     background-clip: text;
     text-transform: uppercase;
     -webkit-text-fill-color: transparent;
-    
+    opacity: 1;
 }
 
+@keyframes enter {
+    0%{font-size: 0px; opacity: 0;}
+    100%{font-size: 60px; opacity: 1;}
+
+}
+
+@keyframes enteru {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+
+}
 
 @keyframes animationName {
     0%{filter: drop-shadow(-1px 0px 25px   #50ffc5);}
@@ -144,12 +170,9 @@ h1{
     100%{filter: drop-shadow(-1px 0px 25px #50ffc5);}
 }
 
-@keyframes enter {
-    0%{height: 0px;}
-    50%{height: 100px;}
-}
 
 p{
+    animation: enteru 3s ease-in;
     color: #fff;
     margin-top: 20px;
 }

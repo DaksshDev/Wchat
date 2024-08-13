@@ -8,6 +8,7 @@ body{
 }
 
 .navbar{  
+    animation: enteru 2s ease-in;
     position: relative;
     text-decoration: none;
     background-color:rgba(0, 0, 0, 0.335);
@@ -64,7 +65,8 @@ body{
 }
 
 .blob{
-    animation: AnimB 10s ease infinite,enterblob 1s ease-in;
+    animation: AnimB 10s ease infinite;
+    animation: enterblob 1s ease-in;
     margin: 0 auto;
     position:absolute;
     display: block;
@@ -121,6 +123,13 @@ p{
 }
 
 @keyframes entermain {
-    0%{height: 0px;}
-    100%{height: 70px;}
+    0%{font-size: 0px; opacity: 0;}
+    100%{font-size: 70px; opacity: 1;}
+
+}
+
+@keyframes enteru {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+
 }
