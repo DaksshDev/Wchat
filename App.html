@@ -1,16 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="App.css" />
+    <script href="App.js" type="text/javascript"></script>
+    <script href="Auth.js" type="text/javascript"></script> 
+    <title>Wchat</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="App.css">
-    <script href="App.js"></script>
-    <title>Wchat</title> 
-</head>  
+  <body>
+    <div class="container">
+        <div class="blob"></div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo"><img src="images/white.png" width="70" height="20" ></div>
+            <ul class="server-list">
+                <li class="server-item">
+                    <img src="create_server.png" alt="Create Server">
+                </li>
+                <li class="server-item">
+                    <img src="server.png" alt="Server 1">
+                </li>
+                <li class="server-item">
+                    <img src="server.png" alt="Server 2">
+                </li>
+                <li class="server-item">
+                    <img src="server.png" alt="Server 3">
+                </li>
+            </ul>
+            <div class="dm-section">
+                <h3>Direct Messages</h3>
+                <ul class="dm-list">
+                    <li class="dm-item">
+                        <img src="dm.png" alt="DM 1">
+                        <span>DM 1</span>
+                    </li>
+                    <li class="dm-item">
+                        <img src="dm.png" alt="DM 2">
+                        <span>DM 2</span>
+                    </li>
+                    <li class="dm-item">
+                        <img src="dm.png" alt="DM 3">
+                        <span>DM 3</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="profile">
+                <span class="profile-name" id="profile-name"></span>
+            </div>
+        </div>
 
-<body>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Find or start a conversation">
+                </div>
+                <div class="tabs">
+                    <button class="tab">Friends</button>
+                    <button class="tab">Online</button>
+                    <button class="tab">Add Friend</button>
+                </div>
+            </div>
 
-</body>
-
+            <!-- Chat Area -->
+            <div class="chat-area glass">
+                <h2 align="center">There is no one to chat with!</h1>
+            </div>
+        </div>
+    </div>
+  </body>
 </html>
