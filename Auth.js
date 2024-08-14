@@ -17,35 +17,47 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 var db = getDatabase(app);
+const DataSetResult = true;
 
 function AddData() {
-const user = document.getElementById("user");
-set(ref(db, 'USERS/'), {
-  username: user.value
-}).then(() => {
-  alert("Account And User Created successfully");
-}).catch((error) => {
-  alert(errorMessage);
-});
-}
 
+  const user = document.getElementById("user");
+  if (user.value === "") {
+    alert("Please enter a username");
+    DataSetResult = false;
+    window.location.reload();
+    return;
+  }
+  if (DataSetResult === true) {
+  set(ref(db, 'USERS/' + user.value), {
+    username: {name: user.value}
+  }).then(() => {
+    // Data saved successfully
+    alert("Account And User Created successfully");
+  }).catch((error) => {
+    alert(errorMessage);
+  });
+  }}
 
 const submit = document.getElementById("submit");
 submit.addEventListener("click", function (event) {
   event.preventDefault();
+  Promise.all([
+    AddData(),
+    createUserWithEmailAndPassword()
+  ])
   //inputs
   const email = document.getElementById("emailid").value;
   const password = document.getElementById("password").value;
 
   //create user
-   createUserWithEmailAndPassword(auth, email, password)
-     AddData()
-
+  if (DataSetResult === true) {
+    createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user; 
       window.location.href = "./App.html";
-     
+      
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -53,8 +65,11 @@ submit.addEventListener("click", function (event) {
       // ..
       alert(errorMessage);
     });
+  }
+
 });
 
+  
 
 
 const submitlog = document.getElementById("submitlog");
