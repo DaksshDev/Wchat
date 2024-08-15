@@ -16,19 +16,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-var db = getDatabase(app);
+const db = getDatabase(app);
 const DataSetResult = true;
 
 function AddData() {
-
   const user = document.getElementById("user");
   if (user.value === "") {
     alert("Please enter a username");
-    window.location.href = "./Index.html";
     DataSetResult = false;
+    window.location.href = "./Index.html";
     return;
   }
-  if (DataSetResult === true) {
+ 
+  if (DataSetResult === true){
   set(ref(db, 'USERS/' + user.value), {
     username: {name: user.value}
   }).then(() => {
@@ -42,15 +42,14 @@ function AddData() {
 const submit = document.getElementById("submit");
 submit.addEventListener("click", function (event) {
   event.preventDefault();
+  //inputs
+  const email = document.getElementById("emailid").value;
+  const password = document.getElementById("password").value;
+  //create user
   Promise.all([
     AddData(),
     createUserWithEmailAndPassword()
   ])
-  //inputs
-  const email = document.getElementById("emailid").value;
-  const password = document.getElementById("password").value;
-
-  //create user
   if (DataSetResult === true) {
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
