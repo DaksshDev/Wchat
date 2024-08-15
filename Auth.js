@@ -24,8 +24,8 @@ function AddData() {
   const user = document.getElementById("user");
   if (user.value === "") {
     alert("Please enter a username");
+    window.location.href = "./Index.html";
     DataSetResult = false;
-    window.location.reload();
     return;
   }
   if (DataSetResult === true) {
